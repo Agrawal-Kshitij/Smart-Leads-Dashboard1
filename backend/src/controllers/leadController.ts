@@ -63,7 +63,7 @@ export const getLeads = async (req: AuthRequest, res: Response) => {
     filter.owner = req.user?._id;
   }
 
-  const sortOrder = sort === 'oldest' ? { createdAt: 1 } : { createdAt: -1 };
+  const sortOrder = sort === 'oldest' ? { createdAt: 'asc' as const } : { createdAt: 'desc' as const };
   const total = await Lead.countDocuments(filter);
   const leads = await Lead.find(filter).sort(sortOrder).skip(skip).limit(limit);
 
@@ -98,7 +98,7 @@ export const exportLeadsCsv = async (req: AuthRequest, res: Response) => {
   ];
   if (req.user?.role !== 'admin') filter.owner = req.user?._id;
 
-  const sortOrder = sort === 'oldest' ? { createdAt: 1 } : { createdAt: -1 };
+  const sortOrder = sort === 'oldest' ? { createdAt: 'asc' as const } : { createdAt: 'desc' as const };
   const leads = await Lead.find(filter).sort(sortOrder);
   const csvRows = ['Name,Email,Status,Source,Created At'];
   leads.forEach((lead) => {
