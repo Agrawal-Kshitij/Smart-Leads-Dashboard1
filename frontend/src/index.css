@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.dark {
+  color-scheme: dark;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply min-h-screen bg-slate-50 text-slate-900 antialiased;
+  background-image: radial-gradient(circle at top left, rgba(56, 189, 248, 0.18), transparent 25%),
+    radial-gradient(circle at bottom right, rgba(59, 130, 246, 0.15), transparent 22%);
+}
+
+.dark body {
+  @apply bg-slate-950 text-slate-100;
+  background-image: radial-gradient(circle at top left, rgba(59, 130, 246, 0.16), transparent 18%),
+    radial-gradient(circle at bottom right, rgba(56, 189, 248, 0.12), transparent 22%);
+}
+
+button,
+input,
+select,
+textarea {
+  @apply border border-slate-300 bg-white text-slate-900 transition duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-brand focus:border-brand;
+}
+
+.dark button,
+.dark input,
+.dark select,
+.dark textarea {
+  @apply border-slate-700 bg-slate-900 text-slate-100;
+}
+
+::selection {
+  background: #60a5fa;
+  color: white;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #94a3b8;
+}

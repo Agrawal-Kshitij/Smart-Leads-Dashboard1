@@ -1,0 +1,36 @@
+version: '3.8'
+services:
+  backend:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile.backend
+    env_file:
+      - ./backend/.env.example
+    ports:
+      - '5000:5000'
+    depends_on:
+      - mongodb
+    volumes:
+      - ./backend:/app
+
+  frontend:
+    build:
+      context: ./frontend
+      dockerfile: Dockerfile.frontend
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+    volumes:
+      - ./frontend:/app
+
+  mongodb:
+    image: mongo:6.0
+    restart: unless-stopped
+    ports:
+      - '27017:27017'
+    volumes:
+      - mongo-data:/data/db
+
+volumes:
+  mongo-data:
