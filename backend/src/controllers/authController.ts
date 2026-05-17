@@ -18,8 +18,14 @@ const loginSchema = z.object({
 
 const createToken = (id: string) => {
   const secret = process.env.JWT_SECRET || 'secret';
-  const expiresIn = process.env.JWT_EXPIRES_IN || '7d';
-  return jwt.sign({ id }, secret, { expiresIn });
+
+  return jwt.sign(
+    { id },
+    secret,
+    {
+      expiresIn: (process.env.JWT_EXPIRES_IN || '7d') as any,
+    }
+  );
 };
 
 export const registerUser = async (req: Request, res: Response) => {
