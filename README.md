@@ -42,10 +42,13 @@ A full-stack MERN assignment for lead management with JWT authentication, role-b
 3. Start frontend:
    - `cd frontend && npm run dev`
 
-## .env.example 
-
+# Server Configuration
 PORT=5000
+
+# MongoDB Connection
 MONGO_URI=mongodb://mongodb:27017/smartleads
+
+# JWT Authentication
 JWT_SECRET=SuperSecretJwtKey1234
 JWT_EXPIRES_IN=7d
 
