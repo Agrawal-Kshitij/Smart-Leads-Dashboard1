@@ -7,7 +7,7 @@ export default defineConfig({
     port: 3000,
     host: '0.0.0.0',
     proxy: {
-      '/api': 'http://localhost:5000'
+      '/api': 'https://smart-leads-dashboard1-3.onrender.com/'
     }
   }
 });
