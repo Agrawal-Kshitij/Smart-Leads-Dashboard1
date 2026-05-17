@@ -53,8 +53,8 @@ A full-stack MERN assignment for lead management with JWT authentication, role-b
 
 ## Deployment
 
-Frontend: Vercel  
-Backend: Render/Railway  
+Frontend: Render
+Backend: Render
 Database: MongoDB Atlas
 
 ## Author
