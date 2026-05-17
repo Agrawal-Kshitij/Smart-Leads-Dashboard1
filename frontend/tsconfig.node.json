@@ -3,7 +3,9 @@
     "module": "ESNext",
     "moduleResolution": "Bundler",
     "target": "ES2020",
-    "types": ["node"]
+    "types": ["node"],
+    "composite": 
+    
   },
   "include": ["vite.config.ts", "src/**/*.d.ts"]
 }
