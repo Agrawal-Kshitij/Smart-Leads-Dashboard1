@@ -8,6 +8,30 @@ A full-stack MERN assignment for lead management with JWT authentication, role-b
 - `frontend/` - React + TypeScript + Tailwind dashboard
 - `docker-compose.yml` - Local environment with MongoDB
 
+## Features
+
+- User Authentication (JWT)
+- Lead Management
+- Dashboard Analytics
+- Search and Filters
+- Responsive UI
+- Protected Routes
+- REST API Integration
+
+## Tech Stack
+
+### Frontend
+- React
+- TypeScript
+- Tailwind CSS
+- Vite
+
+### Backend
+- Node.js
+- Express.js
+- MongoDB
+- JWT Authentication
+
 ## Run locally
 
 1. Install dependencies:
@@ -26,3 +50,13 @@ A full-stack MERN assignment for lead management with JWT authentication, role-b
 
 - Backend uses JWT authentication and RBAC for `admin` and `sales` roles.
 - Leads can be filtered by status/source, searched by text, sorted, paginated, and exported to CSV.
+
+## Deployment
+
+Frontend: Vercel  
+Backend: Render/Railway  
+Database: MongoDB Atlas
+
+## Author
+
+Kshitij Agrawal
